@@ -25,5 +25,10 @@ module.exports.run = (client, message,args) => {
 module.exports.help = {
   name: 'dice',
   description: 'Renvoie la valeur de plusieurs dès!',
+  aliases: ['dice'],
+  cooldown: 10,
+  usage: '',
+  isUserAdmin: false,
+  permissions: false,
   args: false
 }

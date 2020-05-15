@@ -3,14 +3,13 @@ const { MessageEmbed } = require("discord.js");
 module.exports.run = (client, message,args) => {
   const embed = new MessageEmbed()
       .setColor("#dc143c")
-      .setTitle("Titre de l'embed")
+      .setTitle("Info Génésis")
       .setURL("https://google.com")
-      .setDescription("Description de l'embed")
+      .setDescription("Information sur le clan")
       .setThumbnail(client.user.displayAvatarURL())
-      .addField("#accueil", "et je suis sa valeur")
       .addFields(
-        { name: 'Je suis le champ 1', value: 'et je suis sa valeur', inline: true },
-        { name: 'Je suis le champ 2', value: 'et en plus je suis aligné!', inline: true }
+        { name: 'Date de création', value: 'Lundi 22 Octobre 2018', inline: true },
+        { name: 'Description du clan', value: 'Clan sympatique ! Bavard ! Actif ! Respectueux et Mature ! Dons rapide et respecté ! 3 GDC par semaine ! On s\'amuse ! On rigole ! On a un discord ! Ambiance familiale ! Renouvellement du clan en continu ! Rejoignez-nous ! 💪🍀🔥', inline: false }
       )
       .setImage(client.user.displayAvatarURL())
       .setTimestamp()
@@ -20,9 +19,9 @@ module.exports.run = (client, message,args) => {
 } 
 
 module.exports.help = {
-  name: 'embed',
+  name: 'info',
   description: 'Renvoie un embed',
-  aliases: ['embed'],
+  aliases: ['info'],
   cooldown: 10,
   usage: '',
   isUserAdmin: false,
