@@ -12,6 +12,6 @@ module.exports.help = {
   cooldown: 10,
   usage: '<votre_message>',
   isUserAdmin: false,
-  permissions: false,
+  permissions: true,
   args: true
 }

@@ -6,7 +6,7 @@ module.exports.run = (client,message, args) => {
   message.delete();
 
   const embed = new MessageEmbed()
-    .setAuthor(`${message.author.tag}`)
+    .setDescription("Cliquez sur une des réactions ci-dessous pour être \"pour\" ou \"contre\" la suggestion proposer !")
     .setColor("#ffa500")
     .setTitle("__Nouvelle idée !__")
     .setThumbnail(message.author.avatarURL())
@@ -16,7 +16,10 @@ module.exports.run = (client,message, args) => {
     )
     .setFooter(message.author.username, message.author.avatarURL())
 
-  message.channel.send(embed);
+    client.channels.cache.get('708247649849049150').send(embed).then(async msg => {
+      await msg.react('✅');
+      await msg.react('❌');
+    });
 };
 
 module.exports.help = {
