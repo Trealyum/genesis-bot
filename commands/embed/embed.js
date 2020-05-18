@@ -1,6 +1,8 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports.run = (client, message,args) => {
+module.exports.run = (client, message, args) => {
+  message.delete();
+
   const embed = new MessageEmbed()
       .setColor("#dc143c")
       .setTitle("Titre de l'embed")
@@ -21,8 +23,9 @@ module.exports.run = (client, message,args) => {
 
 module.exports.help = {
   name: 'embed',
-  description: 'Renvoie un embed',
   aliases: ['embed'],
+  category: 'embed',
+  description: 'Renvoie un embed',
   cooldown: 10,
   usage: '',
   isUserAdmin: false,

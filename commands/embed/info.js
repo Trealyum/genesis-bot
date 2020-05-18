@@ -1,6 +1,8 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = (client, message,args) => {
+  message.delete();
+
   const embed = new MessageEmbed()
       .setColor("#dc143c")
       .setTitle("Info Génésis")
@@ -20,8 +22,9 @@ module.exports.run = (client, message,args) => {
 
 module.exports.help = {
   name: 'info',
-  description: 'Renvoie un embed',
   aliases: ['info'],
+  category: 'embed',
+  description: 'Renvoie un embed',
   cooldown: 10,
   usage: '',
   isUserAdmin: false,

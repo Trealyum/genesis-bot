@@ -3,6 +3,8 @@ const diceImg = new MessageAttachment('./assets/img/dice.png');
 const randomDice = () => Math.floor(Math.random() * 6) + 1;
 
 module.exports.run = (client, message,args) => {
+  message.delete();
+
   const embed = new MessageEmbed()
       .setColor("#d54e12")
       .setTitle("Random Dice")
@@ -25,6 +27,7 @@ module.exports.run = (client, message,args) => {
 module.exports.help = {
   name: 'dice',
   description: 'Renvoie la valeur de plusieurs dès!',
+  category: 'embed',
   aliases: ['dice'],
   cooldown: 10,
   usage: '',
