@@ -1,31 +1,28 @@
 const { MessageEmbed } = require('discord.js');
 
 module.exports.run = (client,message, args) => {
-  const suggest = (args.slice(0).join(' '))
+  const absence = (args.slice(0).join(' '))
 
   message.delete();
 
   const embed = new MessageEmbed()
-    .setDescription("Cliquez sur une des réactions ci-dessous pour être \"pour\" ou \"contre\" la suggestion proposer !")
     .setColor("#ffa500")
-    .setTitle("__Nouvelle idée !__")
+    .setTitle("__Nouvelle absence !__")
     .setThumbnail(message.author.avatarURL())
     .addFields(
       { name: '**__Auteur : __**', value: (`${message.author.tag}`),inline: false },
-      { name: '**__Suggestion : __**', value: (`${suggest}`), inline: true }
+      { name: '**__Motif : __**', value: (`${absence}`), inline: true }
     )
     .setFooter(message.author.username, message.author.avatarURL())
 
-    client.channels.cache.get('708247649849049150').send(embed).then(async msg => {
-      await msg.react('✅');
-      await msg.react('❌');
-    });
+    message.channel.send('Le motif de ton absence a bien été transmis !');
+    client.channels.cache.get('708247694681964554').send(embed)
 };
 
 module.exports.help = {
-  name: 'suggest',
-  aliases: ['suggest'],
-  category: 'question',
+  name: 'absence',
+  aliases: ['absence'],
+  category: 'absence',
   description: "Fais une suggestion !",
   cooldown: 60,
   usage: '<votre_suggestion>',

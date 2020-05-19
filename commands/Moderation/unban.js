@@ -11,7 +11,6 @@ module.exports.run = async (client, message,args) => {
     .setAuthor(`${user.usename} (${user.id})`, user.avatarURL())
     .setColor("#35f092")
     .setDescription(`**Action**: unban`)
-    .setTimestamp()
     .setFooter(message.author.username, message.author.avatarURL())
 
   client.channels.cache.get('710923057467752489' || '711170282936729621').send(embed);

@@ -37,7 +37,6 @@ module.exports.run = async (client, message, args) => {
     .setAuthor(`${user.user.username} (${user.id})`, user.user.avatarURL())
     .setColor("#287db5")
     .setDescription(`**Action**: mute\n**Temps**: ${ms(ms(muteTime))}`)
-    .setTimestamp()
     .setFooter(message.author.username, message.author.avatarURL());
     
   client.channels.cache.get('710923057467752489' || '711170282936729621').send(embed);

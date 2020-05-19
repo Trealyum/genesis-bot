@@ -12,7 +12,6 @@ module.exports.run = (client, message,args) => {
     .setColor("#ffa500")
     .setDescription(`**Action**: kick\n**Raison**: ${reason}`)
     .setThumbnail(user.avatarURL())
-    .setTimestamp()
     .setFooter(message.author.username, message.author.avatarURL())
 
   client.channels.cache.get('710923057467752489' || '711170282936729621').send(embed);
