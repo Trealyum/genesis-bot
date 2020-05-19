@@ -1,3 +1,4 @@
+const { MESSAGES } = require("../../util/constants");
 const { MessageEmbed } = require('discord.js');
 
 module.exports.run = (client,message, args) => {
@@ -19,14 +20,4 @@ module.exports.run = (client,message, args) => {
     client.channels.cache.get('708247694681964554').send(embed)
 };
 
-module.exports.help = {
-  name: 'report',
-  aliases: ['report'],
-  category: 'plaintes',
-  description: "Fais une suggestion !",
-  cooldown: 60,
-  usage: '<votre_suggestion>',
-  isUserAdmin: false,
-  permissions: false,
-  args: true
-}
+module.exports.help = MESSAGES.COMMANDS.PLAINTES.REPORT;

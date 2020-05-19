@@ -1,4 +1,4 @@
-  
+const { MESSAGES } = require("../../util/constants"); 
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
@@ -24,17 +24,7 @@ module.exports.run = async (client, message, args) => {
     .setColor("#287db5")
     .setDescription(`**Action**: prune\n**Nbr de messages**: ${args[1]}\n**Utilisateur**: ${args[0]}`)
     
-  client.channels.cache.get('710923057467752489' || '711170282936729621').send(embed);
+  client.channels.cache.get('710923057467752489').send(embed);
 };
 
-module.exports.help = {
-  name: "prune",
-  aliases: ['prune'],
-  category: 'Moderation',
-  description: "Purge un nombre de message spécifié sur un utilisateur spécifié",
-  cooldown: 10,
-  usage: '<@user> <nbr_messages>',
-  isUserAdmin: true,
-  permissions: true,
-  args: true
-};
+module.exports.help = MESSAGES.COMMANDS.MODERATION.PRUNE;

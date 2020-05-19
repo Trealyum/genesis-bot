@@ -1,3 +1,4 @@
+const { MESSAGES } = require("../../util/constants");
 const { MessageEmbed } = require('discord.js');
 
 module.exports.run = (client,message, args) => {
@@ -16,20 +17,11 @@ module.exports.run = (client,message, args) => {
     )
     .setFooter(message.author.username, message.author.avatarURL())
 
+    message.channel.send('Votre idée a bien été transmise !');
     client.channels.cache.get('708247649849049150').send(embed).then(async msg => {
       await msg.react('✅');
       await msg.react('❌');
     });
 };
 
-module.exports.help = {
-  name: 'suggest',
-  aliases: ['suggest'],
-  category: 'question',
-  description: "Fais une suggestion !",
-  cooldown: 60,
-  usage: '<votre_suggestion>',
-  isUserAdmin: false,
-  permissions: false,
-  args: true
-}
+module.exports.help = MESSAGES.COMMANDS.QUESTION.SUGGEST;

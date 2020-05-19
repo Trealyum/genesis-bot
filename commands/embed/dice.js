@@ -1,3 +1,4 @@
+const { MESSAGES } = require("../../util/constants");
 const { MessageEmbed, MessageAttachment } = require("discord.js");
 const diceImg = new MessageAttachment('./assets/img/dice.png');
 const randomDice = () => Math.floor(Math.random() * 6) + 1;
@@ -24,14 +25,4 @@ module.exports.run = (client, message,args) => {
   message.channel.send(embed);
 } 
 
-module.exports.help = {
-  name: 'dice',
-  description: 'Renvoie la valeur de plusieurs dès!',
-  category: 'embed',
-  aliases: ['dice'],
-  cooldown: 10,
-  usage: '',
-  isUserAdmin: false,
-  permissions: false,
-  args: false
-}
+module.exports.help = MESSAGES.COMMANDS.EMBED.DICE;

@@ -1,3 +1,4 @@
+const { MESSAGES } = require("../../util/constants");
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = (client, message, args) => {
@@ -16,17 +17,7 @@ module.exports.run = (client, message, args) => {
     .setDescription(`**Action**: unmute`)
     .setFooter(message.author.username, message.author.avatarURL());
     
-  client.channels.cache.get('710923057467752489' || '711170282936729621').send(embed);
+  client.channels.cache.get('710923057467752489' && '711170282936729621').send(embed);
 };
 
-module.exports.help = {
-  name: "unmute",
-  aliases: ['unmute'],
-  category: 'moderation',
-  description: "Unmute un utilisateur",
-  cooldown: 10,
-  usage: '<@user>',
-  isUserAdmin: true,
-  permissions: true,
-  args: true
-};
+module.exports.help = MESSAGES.COMMANDS.MODERATION.UNMUTE;

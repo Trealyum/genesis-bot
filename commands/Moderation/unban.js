@@ -1,3 +1,4 @@
+const { MESSAGES } = require("../../util/constants");
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = async (client, message,args) => {
@@ -13,17 +14,7 @@ module.exports.run = async (client, message,args) => {
     .setDescription(`**Action**: unban`)
     .setFooter(message.author.username, message.author.avatarURL())
 
-  client.channels.cache.get('710923057467752489' || '711170282936729621').send(embed);
+  client.channels.cache.get('710923057467752489' && '711170282936729621').send(embed);
 };
 
-module.exports.help = {
-  name: 'unban',
-  aliases: ['unban'],
-  category: 'moderation',
-  description: "Unban un utilisateur !",
-  cooldown: 10,
-  usage: '<user_id>',
-  isUserAdmin: false,
-  permissions: true,
-  args: true
-}
+module.exports.help = MESSAGES.COMMANDS.MODERATION.UNBAN;

@@ -1,3 +1,4 @@
+const { MESSAGES } = require("../../util/constants");
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = (client, message,args) => {
@@ -14,17 +15,7 @@ module.exports.run = (client, message,args) => {
     .setThumbnail(user.avatarURL())
     .setFooter(message.author.username, message.author.avatarURL())
 
-  client.channels.cache.get('710923057467752489' || '711170282936729621').send(embed);
+  client.channels.cache.get('710923057467752489').send(embed);
 };
 
-module.exports.help = {
-  name: 'kick',
-  aliases: ['kick'],
-  category: 'moderation',
-  description: "Kick un utilisateur !",
-  cooldown: 10,
-  usage: '<@user> <raison>',
-  isUserAdmin: true,
-  permissions: true,
-  args: true
-}
+module.exports.help = MESSAGES.COMMANDS.MODERATION.KICK;

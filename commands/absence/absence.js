@@ -1,3 +1,4 @@
+const { MESSAGES } = require("../../util/constants");
 const { MessageEmbed } = require('discord.js');
 
 module.exports.run = (client,message, args) => {
@@ -16,17 +17,7 @@ module.exports.run = (client,message, args) => {
     .setFooter(message.author.username, message.author.avatarURL())
 
     message.channel.send('Le motif de ton absence a bien été transmis !');
-    client.channels.cache.get('708247694681964554').send(embed)
+    client.channels.cache.get('708247693050380318').send(embed)
 };
 
-module.exports.help = {
-  name: 'absence',
-  aliases: ['absence'],
-  category: 'absence',
-  description: "Fais une suggestion !",
-  cooldown: 60,
-  usage: '<votre_suggestion>',
-  isUserAdmin: false,
-  permissions: false,
-  args: true
-}
+module.exports.help = MESSAGES.COMMANDS.ABSENCE.ABSENCE;

@@ -1,3 +1,4 @@
+const { MESSAGES } = require("../../util/constants");
 const { MessageEmbed } = require("discord.js");
 const { PREFIX } = require("../../config");
 const { readdirSync } = require("fs");
@@ -35,14 +36,4 @@ module.exports.run = (client, message, args) => {
   }
 };
 
-module.exports.help = {
-  name: "help",
-  aliases: ['help'],
-  category: 'misc',
-  description: "Renvoie une liste de commandes ou les informations sur une seule!",
-  cooldown: 3,
-  usage: '<command_name>',
-  isUserAdmin: false,
-  permissions: false,
-  args: false
-};
+module.exports.help = MESSAGES.COMMANDS.INFO.HELP;

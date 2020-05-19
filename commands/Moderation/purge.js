@@ -1,3 +1,4 @@
+const { MESSAGES } = require("../../util/constants");
 const { MessageEmbed } = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
@@ -16,17 +17,7 @@ module.exports.run = async (client, message, args) => {
     .setColor("#287db5")
     .setDescription(`**Action**: purge\n**Nbr de messages**: ${args[0]}\n**Salon**: ${message.channel}`)
     
-  client.channels.cache.get('710923057467752489' || '711170282936729621').send(embed);
+  client.channels.cache.get('710923057467752489' && '711170282936729621').send(embed);
 };
 
-module.exports.help = {
-  name: "purge",
-  aliases: ['purge'],
-  category: 'moderation',
-  description: "Purge un nombre de message spécifié",
-  cooldown: 10,
-  usage: '<nbr_messages>',
-  isUserAdmin: false,
-  permissions: true,
-  args: true
-};
+module.exports.help = MESSAGES.COMMANDS.MODERATION.PURGE;
